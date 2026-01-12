@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+</head>
+<body>
+    <h2>URL Shortener</h2>
+
+    <form method="POST" action="/">
+        <label>Enter URL:</label><br>
+        <input type="text" name="long_url" placeholder="https://example.com" size="50"><br><br>
+
+        <button type="submit">Shorten</button>
+    </form>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <br>
+
+    <label>Shortened URL:</label><br>
+    <input type="text" value="{{ short_url }}" readonly size="50">
+
+    <br><br>
+    <a href="/history">View History</a>
+</body>
+</html>

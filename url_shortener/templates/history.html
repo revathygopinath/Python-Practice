@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL History</title>
+</head>
+<body>
+    <h2>URL History</h2>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Original URL</th>
+            <th>Short URL</th>
+        </tr>
+
+        {% for item in urls %}
+        <tr>
+            <td>{{ item.original_url }}</td>
+            <td>http://127.0.0.1:5000/{{ item.short_code }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
